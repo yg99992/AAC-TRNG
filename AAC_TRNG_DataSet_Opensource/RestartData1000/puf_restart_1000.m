@@ -81,7 +81,6 @@ annotation('textbox', [0.8, 0.75, 0.12, 0.1], 'String', res_str, ...
 
 
 fprintf('\n--- NIST 800-90B Restart Sanity Check ---\n');
-fprintf('输入熵值 (H): %.6f\n', H_input);
-fprintf('理论阈值上限 (X_max): %d\n', cutoff);
-fprintf('实测最大频数 (2000组中最高值): %d\n', X_global_max);
-fprintf('测试结论: %s\n', res_str);
+fprintf('H: %.6f\n', H_input);
+fprintf(' X_max: %d\n', cutoff);
+fprintf('conclusion: %s\n', res_str);
