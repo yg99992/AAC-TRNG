@@ -9,13 +9,13 @@ bits_per_run  = 1000000;
 total_bytes   = num_restarts * bits_per_run; 
 
 if isfile(filepath)
-    fprintf('正在读取大文件: %s ...\n', filepath);
+    fprintf('Reading file: %s ...\n', filepath);
     fid = fopen(filepath, 'rb');
     raw_data = fread(fid, total_bytes, '*uint8'); 
     fclose(fid);
     
     if length(raw_data) < total_bytes
-        error('文件大小不足！预期 %.2f MB, 实际 %.2f MB', ...
+        error('Insufficient file size! Expected %.2f MB, Actual %.2f MB', ...
             total_bytes/1e6, length(raw_data)/1e6);
     end
 
@@ -23,16 +23,15 @@ if isfile(filepath)
     processed_matrix = reshape(clean_bits, bits_per_run, num_restarts); 
     clear raw_data clean_bits; 
 else
-    fprintf('wrong');
+    fprintf('Error: File not found.\n');
     processed_matrix = randi([0, 1], bits_per_run, num_restarts, 'uint8');
 end
-
 
 R = corrcoef(double(processed_matrix)); 
 
 off_diag_mask = ~eye(size(R)); 
 R_values = R(off_diag_mask);
-mean_raw  = mean(R_values);           
+mean_raw  = mean(R_values);            
 mean_abs  = mean(abs(R_values));      
 max_val   = max(R_values);            
 min_val   = min(R_values);            
@@ -40,10 +39,10 @@ std_val   = std(R_values);
 
 theoretical_3sigma = 3 / sqrt(bits_per_run); 
 
-fprintf('最大互相关 (Max):    %+.6f\n', max_val);
-fprintf('最小互相关 (Min):    %+.6f\n', min_val);
-fprintf('原始均值 (Mean):     %+.6f\n', mean_raw);
-fprintf('绝对均值 (Mean Abs):  %.6f\n', mean_abs);
+fprintf('Max:      %+.6f\n', max_val);
+fprintf('Min:      %+.6f\n', min_val);
+fprintf('Mean:     %+.6f\n', mean_raw);
+fprintf('Mean Abs: %.6f\n', mean_abs);
 
 R_plot = R;                 
 R_plot(eye(size(R))==1) = 0; 
@@ -81,7 +80,5 @@ set(hC, 'TickLabels', arrayfun(@(x) sprintf('%.3f', x), ticks, 'UniformOutput', 
 
 ylabel(hC, 'Correlation Coefficient', common_font{:});
 
-
 export_name = 'Correlation_Matrix_for_Visio.emf';
-print(hFig, export_name, '-dmeta', '-r600'); 
-
+print(hFig, export_name, '-dmeta', '-r600');
