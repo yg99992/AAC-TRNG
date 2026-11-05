@@ -41,7 +41,17 @@ Folder `./AAC_TRNG_DataSet_Opensource/Different_ET/` contains random bit data ca
    Binary raw random data collected on FPGA3 board under 8 different ET settings.
 4. `./AAC_TRNG_DataSet_Opensource/Different_ET/LSB_and_figure.m`
    MATLAB script to compute the bit-wise min-entropy and generate corresponding plots.
-
+   
+### Different Sampling Frequency Data
+Folder `./AAC_TRNG_DataSet_Opensource/Different_frequency/` contains random bit data captured under different sampling frequency configurations.
+1. `./AAC_TRNG_DataSet_Opensource/Different_frequency/FPGA1/`
+   Binary raw random data collected on FPGA1 board under multiple sampling frequency settings.
+2. `./AAC_TRNG_DataSet_Opensource/Different_frequency/FPGA2/`
+   Binary raw random data collected on FPGA2 board under multiple sampling frequency settings.
+3. `./AAC_TRNG_DataSet_Opensource/Different_frequency/FPGA3/`
+   Binary raw random data collected on FPGA3 board under multiple sampling frequency settings.
+4. `./AAC_TRNG_DataSet_Opensource/Different_frequency/lsb_dat.m`
+   MATLAB script to compute the bit-wise min-entropy for each output bit.
 
 ## Verilog Source Code
 1. `./Verilog/AXI_BUS/` folder includes the verilog files of AXI bus.
