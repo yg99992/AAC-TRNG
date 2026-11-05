@@ -56,6 +56,18 @@ Due to file size limitations, the raw data for each frequency is split into two 
 4. `./AAC_TRNG_DataSet_Opensource/Different_frequency/lsb_dat.m`
    MATLAB script to compute the bit-wise min-entropy for each output bit.
 
+### NIST SP 800-22 and SP 800-90B Evaluation Data
+Folder `./AAC_TRNG_DataSet_Opensource/NIST_SP_800_22_and_90B/` contains post-processed valid random bit data, consisting of the least significant two bits output from our TRNG.
+1. `./AAC_TRNG_DataSet_Opensource/NIST_SP_800_22_and_90B/Low2Bits_T0NG8_FPGA1.BIN`
+Post-processed binary random data (the least significant 2 bits) collected from FPGA1.
+2. `./AAC_TRNG_DataSet_Opensource/NIST_SP_800_22_and_90B/Low2Bits_T0NG8_FPGA2.BIN`
+Post-processed binary random data (the least significant 2 bits) collected from FPGA2.
+3. `./AAC_TRNG_DataSet_Opensource/NIST_SP_800_22_and_90B/Low2Bits_T0NG8_FPGA3.BIN`
+Post-processed binary random data (the least significant 2 bits) collected from FPGA3.
+4. `./AAC_TRNG_DataSet_Opensource/NIST_SP_800_22_and_90B/NIST_SP_800_22.m`
+MATLAB script for plotting the test results of NIST SP 800-22.
+5. `./AAC_TRNG_DataSet_Opensource/NIST_SP_800_22_and_90B/NIST_SP_800_90B.m`
+MATLAB script for plotting the test results of NIST SP 800-90B.
 
 
 ## Verilog Source Code
