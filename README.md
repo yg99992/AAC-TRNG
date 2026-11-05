@@ -44,14 +44,19 @@ Folder `./AAC_TRNG_DataSet_Opensource/Different_ET/` contains random bit data ca
    
 ### Different Sampling Frequency Data
 Folder `./AAC_TRNG_DataSet_Opensource/Different_frequency/` contains random bit data captured under different sampling frequency configurations.
+The adopted sampling frequencies include 5 MHz, 6.25 MHz, 10 MHz, 12.5 MHz, 25 MHz, and 50 MHz.
+Due to file size limitations, the raw data for each frequency is split into two separate parts.
+
 1. `./AAC_TRNG_DataSet_Opensource/Different_frequency/FPGA1/`
-   Binary raw random data collected on FPGA1 board under multiple sampling frequency settings.
+   Binary raw random data collected on FPGA1 board under six sampling frequency settings. Each frequency dataset is divided into part1 and part2.
 2. `./AAC_TRNG_DataSet_Opensource/Different_frequency/FPGA2/`
-   Binary raw random data collected on FPGA2 board under multiple sampling frequency settings.
+   Binary raw random data collected on FPGA2 board under six sampling frequency settings. Each frequency dataset is divided into part1 and part2.
 3. `./AAC_TRNG_DataSet_Opensource/Different_frequency/FPGA3/`
-   Binary raw random data collected on FPGA3 board under multiple sampling frequency settings.
+   Binary raw random data collected on FPGA3 board under six sampling frequency settings. Each frequency dataset is divided into part1 and part2.
 4. `./AAC_TRNG_DataSet_Opensource/Different_frequency/lsb_dat.m`
    MATLAB script to compute the bit-wise min-entropy for each output bit.
+
+
 
 ## Verilog Source Code
 1. `./Verilog/AXI_BUS/` folder includes the verilog files of AXI bus.
